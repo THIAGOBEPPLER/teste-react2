@@ -1,0 +1,52 @@
+
+.jogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    
+    border-radius: 5;
+    border-color: #e8ffff;
+    align-self: center;
+  }
+  
+  .jogoMain {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    flex-grow : 2;
+    gap:10px
+  }
+  
+  .jogoDesc{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    flex-grow: 1;
+    gap: 1px
+  }
+  
+  body {
+    color: #e8ffff;
+    background-color: #213e3b;
+  }
+  
+  .placar{
+    font-size: 12px;
+  }
+  
+  .jogoDesc{
+    font-size: 10px;
+  }
+  
+  .container{
+    display: flex;
+    justify-content: space space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 2px;
+    
+  }
+    
