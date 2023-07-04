@@ -6,16 +6,16 @@ import Pontuar from "../Util/PontuarUtil";
 import { PontuacaoModel } from "../../Models/PontuacaoModel";
 
 import "./AtualizarJogo.css"
+import { spawn } from "child_process";
 
 function AtualizarJogo(){
 
-    const [pontuacao, setPontuacao] = useState(new PontuacaoModel(0,0,0,0,0,0,[]));
+    const [pontuacao, setPontuacao] = useState(new PontuacaoModel(0,6,0,0,6,0,[],0,0));
 
     return(
         <div className="main">
 
-            {/* pontuacao parcial de cada dupla
-            qual set 
+            {/*
             tipo do set 
             tipo do game  */}
 
@@ -24,6 +24,10 @@ function AtualizarJogo(){
             <p> Pontuação: {pontuacao.pontuacao1} / {pontuacao.pontuacao2}</p>
             <p> Game: {pontuacao.games1} / {pontuacao.games2}</p>
             <p> Set: {pontuacao.sets1} / {pontuacao.sets2}</p>
+            { (pontuacao.tieBreak1 > 0  || pontuacao.tieBreak2 >0 ) && 
+            <span>
+                Tie Break: {pontuacao.tieBreak1} / {pontuacao.tieBreak2}
+            </span> }
             <p> Placar: {pontuacao.placar.map((p) => {
                                     return (
                                         <span>{p}, </span>
