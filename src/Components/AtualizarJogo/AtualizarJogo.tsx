@@ -6,7 +6,6 @@ import Pontuar from "../Util/PontuarUtil";
 import { PontuacaoModel } from "../../Models/PontuacaoModel";
 
 import "./AtualizarJogo.css"
-import { spawn } from "child_process";
 
 function AtualizarJogo(){
 
