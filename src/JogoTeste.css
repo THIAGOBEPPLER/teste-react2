@@ -1,36 +1,18 @@
 
-.jogo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-    
-    border-radius: 5;
-    border-color: #e8ffff;
-    align-self: center;
-  }
-  
-  .jogoMain {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0;
-    flex-grow : 2;
-    gap:10px
-  }
-  
-  .jogoDesc{
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 0;
-    flex-grow: 1;
-    gap: 1px
-  }
+    :root {
+        --cor1: #142d4c;
+        --cor2: #385170;
+        --cor3: #9fd3c7;
+        --cor4: #ececec;
+        --cor5: #213e3b;
+        --cor6: blueviolet;
+        --cor7: #1e90ff;
+      }
   
   body {
     color: #e8ffff;
     background-color: #213e3b;
+    margin: 40px;
   }
   
   .placar{
@@ -38,15 +20,39 @@
   }
   
   .jogoDesc{
-    font-size: 10px;
+    font-size: 12px;
+    text-align: center;
+    margin: 1%;
   }
   
-  .container{
+  .container {
     display: flex;
-    justify-content: space space-around;
-    align-items: center;
     flex-wrap: wrap;
-    border: 2px;
-    
+    justify-content: center;
+    align-self: stretch;
+    gap: 20px;
+  }
+
+
+
+  .jogo {
+    height: 20%;
+    background-color: var(--cor1);
+    border: 2px solid black;
+    border-radius: 5%;
+    text-align: center;
+
   }
     
+  .jogoMain {
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 2;
+    gap:10px;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+
+  }
