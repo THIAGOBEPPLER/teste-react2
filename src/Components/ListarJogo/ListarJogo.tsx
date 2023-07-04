@@ -21,7 +21,6 @@ function ListarJogo(listaJogos: Array<JogoModel>){
         auxList.push(setJogo());
         auxList.push(setJogo());
 
-
         listaJogos = auxList;
     }
 
@@ -67,7 +66,6 @@ function ListarJogo(listaJogos: Array<JogoModel>){
 
             
         </div>
-        
         
     )
 }
