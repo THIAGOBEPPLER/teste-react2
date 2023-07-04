@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ListarJogo from './Components/ListarJogo/ListarJogo';
 import { JogoModel } from './Models/JogoModel';
+import AtualizarJogo from './Components/AtualizarJogo/AtualizarJogo';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,6 +13,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     {/* <App /> */}
+    <AtualizarJogo />
     <ListarJogo {...new Array<JogoModel>} />
   </React.StrictMode>
 );
