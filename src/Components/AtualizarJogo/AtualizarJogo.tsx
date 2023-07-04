@@ -17,7 +17,7 @@ function AtualizarJogo(){
             tipo do set 
             tipo do game  */}
 
-<p>AtualizarJogo</p>
+            <p>AtualizarJogo</p>
 
             <p> Pontuacao {pontuacao.pontuacao}</p>
             <p> Game {pontuacao.games}</p>
