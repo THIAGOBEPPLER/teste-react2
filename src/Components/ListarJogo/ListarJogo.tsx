@@ -1,9 +1,9 @@
 import { DuplaModel } from "../../Models/DuplaModel";
 import { JogoModel } from "../../Models/JogoModel"
 
-import "./JogoTeste.css"
+import "./ListarJogo.css"
 
-function JogoTeste(listaJogos: Array<JogoModel>){
+function ListarJogo(listaJogos: Array<JogoModel>){
 
 
     if(Object.keys(listaJogos).length === 0){
@@ -86,4 +86,4 @@ function setJogo(): JogoModel{
     return jogo;
 }
 
-export default JogoTeste
+export default ListarJogo

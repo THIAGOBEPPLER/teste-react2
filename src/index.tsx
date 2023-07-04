@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import JogoTeste from './Components/JogoTeste/JogoTeste';
+import ListarJogo from './Components/ListarJogo/ListarJogo';
 import { JogoModel } from './Models/JogoModel';
 
 const root = ReactDOM.createRoot(
@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     {/* <App /> */}
-    <JogoTeste {...new Array<JogoModel>} />
+    <ListarJogo {...new Array<JogoModel>} />
   </React.StrictMode>
 );
 
