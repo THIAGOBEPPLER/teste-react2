@@ -9,14 +9,10 @@ import "./AtualizarJogo.css"
 
 function AtualizarJogo(){
 
-    const [pontuacao, setPontuacao] = useState(new PontuacaoModel(0,6,0,0,6,0,[],0,0));
+    const [pontuacao, setPontuacao] = useState(new PontuacaoModel(0, 0, 0, 0, 0, 0, [], 0, 0, false));
 
     return(
         <div className="main">
-
-            {/*
-            tipo do set 
-            tipo do game  */}
 
             <h2>Atualizar Jogo</h2>
 
@@ -28,16 +24,26 @@ function AtualizarJogo(){
                 Tie Break: {pontuacao.tieBreak1} / {pontuacao.tieBreak2}
             </span> }
             <p> Placar: {pontuacao.placar.map((p) => {
-                                    return (
-                                        <span>{p}, </span>
-                                          
-                                    );
-                                })}</p>
+                return (
+                    <span>{p}, </span>
+                        
+                );
+            })}</p>
 
-            <button onClick= {() => setPontuacao( Pontuar(pontuacao, 1))}>Pontuar Dupla 1</button> &nbsp;  &nbsp;
-            <button onClick= {() => setPontuacao( Pontuar(pontuacao, 2))}>Pontuar Dupla 2</button>
+            <span>
+                {pontuacao.jogoFinalizado == false ?
+                <span>
+                    <button onClick= {() => setPontuacao( Pontuar(pontuacao, 1))}>Pontuar Dupla 1</button> &nbsp;  &nbsp;
+                     <button onClick= {() => setPontuacao( Pontuar(pontuacao, 2))}>Pontuar Dupla 2</button>
+                </span> :
+                <span>
+                    Jogo Finalizado
+                </span>}
+            </span>
 
+            
             <hr />
+
         </div>
     )
 }
