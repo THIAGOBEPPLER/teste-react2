@@ -1,5 +1,5 @@
-import { DuplaModel } from "./Models/DuplaModel";
-import { JogoModel } from "./Models/JogoModel"
+import { DuplaModel } from "../../Models/DuplaModel";
+import { JogoModel } from "../../Models/JogoModel"
 
 import "./JogoTeste.css"
 
