@@ -7,8 +7,7 @@ import "./AtualizarJogo.css"
 
 function AtualizarJogo(){
     
-    const [pontuacao, setPontuacao] = useState(new PontuacaoModel(30, 5, 0, 0, 0, 0, [], 0, 0, false));
-
+    const [pontuacao, setPontuacao] = useState(new PontuacaoModel(0, 0, 0, 0, 0, 0, [], 0, 0, false));
 
     return(
         <div className="main">
@@ -41,8 +40,8 @@ function AtualizarJogo(){
             </span>
 
             <div>
-                {pontuacao.pontuacaoBkp !== undefined &&
-                <button onClick={() => setPontuacao({...pontuacao.pontuacaoBkp ?? pontuacao})}> Desfazer</button>
+                {pontuacao.pontuacaoBkp !== null &&
+                <button onClick={() => setPontuacao(Desfazer(pontuacao) ?? pontuacao)}> Desfazer</button>
                 }
                 <br />
             </div>
@@ -50,6 +49,15 @@ function AtualizarJogo(){
 
         </div>
     )
+}
+
+function Desfazer(pontuacao: PontuacaoModel)
+{
+    debugger
+    let novaPontuacao = { ...pontuacao, placar: pontuacao.placar.map(item => item) } 
+    novaPontuacao.pontuacaoBkp = {...novaPontuacao}; 
+
+    return({...pontuacao.pontuacaoBkp ?? novaPontuacao} )
 }
 
 export default AtualizarJogo

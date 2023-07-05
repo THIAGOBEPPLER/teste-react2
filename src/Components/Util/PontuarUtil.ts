@@ -1,9 +1,9 @@
 import { PontuacaoModel } from "../../Models/PontuacaoModel";
 
 export default function Pontuar(pontuacao: PontuacaoModel, duplaPontuar: number){
- 
-    let novaPontuacao = { ...pontuacao} 
-    novaPontuacao.pontuacaoBkp = {...pontuacao}; 
+
+    let novaPontuacao = { ...pontuacao, placar: pontuacao.placar.map(item => item) } 
+    novaPontuacao.pontuacaoBkp = {...pontuacao, placar: pontuacao.placar.map(item => item)}; 
 
     if(novaPontuacao.sets1 == 1  && novaPontuacao.sets2 == 1)
         return PontuarTieBreacao(novaPontuacao,duplaPontuar)
