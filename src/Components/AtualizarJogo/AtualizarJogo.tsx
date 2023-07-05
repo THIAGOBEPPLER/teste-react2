@@ -51,6 +51,7 @@ function AtualizarJogo(){
     )
 }
 
+
 function Desfazer(pontuacao: PontuacaoModel)
 {
     debugger
