@@ -1,8 +1,9 @@
 import { PontuacaoModel } from "../../Models/PontuacaoModel";
 
 export default function Pontuar(pontuacao: PontuacaoModel, duplaPontuar: number){
-
+ 
     let novaPontuacao = { ...pontuacao} 
+    novaPontuacao.pontuacaoBkp = {...pontuacao}; 
 
     if(novaPontuacao.sets1 == 1  && novaPontuacao.sets2 == 1)
         return PontuarTieBreacao(novaPontuacao,duplaPontuar)
@@ -12,22 +13,22 @@ export default function Pontuar(pontuacao: PontuacaoModel, duplaPontuar: number)
 
     if(duplaPontuar == 1){
 
-        switch (novaPontuacao.pontuacao1) {
+        switch (novaPontuacao.pontos1) {
             case 0:
-                novaPontuacao.pontuacao1 = 15
+                novaPontuacao.pontos1 = 15
                 break;
     
             case 15:
-                novaPontuacao.pontuacao1 = 30
+                novaPontuacao.pontos1 = 30
                 break;
     
             case 30:
-                novaPontuacao.pontuacao1 = 40
+                novaPontuacao.pontos1 = 40
                 break;
     
             case 40:
-                novaPontuacao.pontuacao1 = 0 
-                novaPontuacao.pontuacao2 = 0 
+                novaPontuacao.pontos1 = 0 
+                novaPontuacao.pontos2 = 0 
                 novaPontuacao.games1 ++; 
                 break;
         }
@@ -44,22 +45,22 @@ export default function Pontuar(pontuacao: PontuacaoModel, duplaPontuar: number)
     }
     else{
 
-        switch (novaPontuacao.pontuacao2) {
+        switch (novaPontuacao.pontos2) {
             case 0:
-                novaPontuacao.pontuacao2 = 15
+                novaPontuacao.pontos2 = 15
                 break;
     
             case 15:
-                novaPontuacao.pontuacao2 = 30
+                novaPontuacao.pontos2 = 30
                 break;
     
             case 30:
-                novaPontuacao.pontuacao2 = 40
+                novaPontuacao.pontos2 = 40
                 break;
     
             case 40:
-                novaPontuacao.pontuacao2 = 0 
-                novaPontuacao.pontuacao1 = 0 
+                novaPontuacao.pontos2 = 0 
+                novaPontuacao.pontos1 = 0 
                 novaPontuacao.games2 ++; 
                 break;
         }
@@ -152,7 +153,6 @@ function PontuarTieBreacao(pontuacao: PontuacaoModel, duplaPontuar: number){
 
 function ValidarFinalJogo(pontuacao: PontuacaoModel)
 {
-    debugger;
     if(pontuacao.sets1 == 2 || pontuacao.sets2 == 2){
         return true;
     }
